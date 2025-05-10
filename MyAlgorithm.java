@@ -218,8 +218,8 @@ public class MyAlgorithm extends Algorithm{
             if (curNode == -1) break;
             isVisited[curNode] = true;
             for(Pair<Integer, Integer> neighbor : graph.adjacencyList.get(curNode)){ // ไล่เพื่อนบ้านทุกคน
-                if (!isVisited[neighbor.first] && result[curNode] + neighbor.second < result[neighbor.first]) { // ถ้ายังไม่เคยไปหาเพื่อนบ้านและค่าของ curNode + เพื่อนทางไปบ้านเพื่อนน้อยกว่า ทางที่เก็บไว้ให้ทำ
-                    result[neighbor.first] = result[curNode] + neighbor.second; // ให้ทางไป = ทางที่สั้นที่สุด
+                if (!isVisited[neighbor.first]) {
+                    result[neighbor.first] = Math.min(result[neighbor.first], neighbor.second+result[curNode]);
                 }
             }
         }
