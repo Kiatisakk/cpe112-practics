@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class MainMineCraftEP1 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        int e = scan.nextInt();
         int n = scan.nextInt();
-        GraphM graph = new GraphM(true, false, n);
+        GraphM graph = new GraphM(true, false, e);
         for(int i=0; i<n; i++){
             int src = scan.nextInt();
             int dest = scan.nextInt();
